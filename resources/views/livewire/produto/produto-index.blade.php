@@ -1,10 +1,10 @@
 <div class="container mt-4">
     <div class="row mb-3">
         <div class="col-md-6">
-            <h2>Produtos</h2>
+            <h2><i class="bi bi-box"></i> Produtos</h2> <!-- Ícone adicionado aqui -->
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('produtos.create') }}" class="btn btn-primary">
+            <a href="{{ route('produtos.create') }}" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i> Novo Produto
             </a>
         </div>
@@ -47,20 +47,22 @@
                         @forelse($produtos as $produto)
                             <tr>
                                 <td>{{ $produto->nome }}</td>
-                                <td>{{ $produto->igredientes }}</td>
+                                <td>{{ $produto->ingredientes }}</td>
                                 <td>{{ $produto->valor }}</td>
                                 <td>
+                                    <!-- Visualizar -->
                                     <a href="{{ route('produtos.show', $produto->id) }}" 
-                                        class="btn btn-sm btn-info">
+                                        class="btn btn-sm btn-info" title="Visualizar">
                                         <i class="bi bi-eye"></i>
                                     </a>
+                                    <!-- Editar -->
                                     <a href="{{ route('produtos.edit', $produto->id) }}" 
-                                        class="btn btn-sm btn-warning">
+                                        class="btn btn-sm btn-warning" title="Editar">
                                         <i class="bi bi-pencil"></i>
                                     </a>
+                                    <!-- Excluir -->
                                     <button wire:click="delete({{ $produto->id }})" 
-                                        class="btn btn-sm btn-danger" onclick="return 
-                                        confirm('Tem certeza?')">
+                                        class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza?')" title="Excluir">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
