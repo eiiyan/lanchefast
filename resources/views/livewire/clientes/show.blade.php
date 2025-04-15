@@ -13,7 +13,7 @@
             <div class="row mb-4">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <h5 class="fw-bold">Informações Pessoais</h5>
+                        <h5 class="fw-bold">Informações  Pessoais</h5>
                         <hr class="mx-auto mb-4" style="width: 70%;">
                     </div>
                     <p class="mt-2"><strong>Nome:</strong> {{ $cliente->nome }}</p>
