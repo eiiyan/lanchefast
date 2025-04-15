@@ -12,6 +12,11 @@ use App\Livewire\Produto\ProdutoIndex;
 use App\Livewire\Produto\ProdutoShow;
 use Illuminate\Support\Facades\Route;
 
+use App\Livewire\Admin\AdminIndex;
+use App\Livewire\Admin\AdminCreate;
+use App\Livewire\Admin\AdminEdit;
+use App\Livewire\Admin\AdminShow;
+
 Route::prefix('clientes')->group(function () { //prefixo da rota, no caso clientes
     Route::get('/', \App\Livewire\Clientes\index::class)->name('clientes.index');
     Route::get('/create', Create::class)->name('clientes.create');
@@ -34,7 +39,12 @@ Route::prefix('funcionarios')->group(function () {
     Route::get('/{funcionario}/edit', FuncionarioEdit::class)->name('funcionarios.edit');
 });
 
-    
+Route::prefix('admins')->group(function () {
+    Route::get('/', AdminIndex::class)->name('admins.index');
+    Route::get('/create', AdminCreate::class)->name('admins.create');
+    Route::get('/{admin}', AdminShow::class)->name('admins.show');
+    Route::get('/{admin}/edit', AdminEdit::class)->name('admins.edit');
+});
 
 Route::prefix('funcionarios')->group(function () {
     Route::get('/', FuncionarioIndex::class)->name('funcionarios.index');
