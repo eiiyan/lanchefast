@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row mb-3">
         <div class="col-md-6">
-            <h2>Clientes</h2>
+            <h2><i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>Clientes</h2>
         </div>
         <div class="col-md-6 text-end">
             <a href="{{ route('clientes.create') }}" class="btn btn-success">
