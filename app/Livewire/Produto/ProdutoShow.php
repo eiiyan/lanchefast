@@ -25,7 +25,7 @@ class ProdutoShow extends Component
     {
         // Verifica se o produto tem imagem
         if ($this->produto->imagem) {
-            return asset('storage/app/public/' . $this->produto->imagem);
+            return asset('storage/images' . $this->produto->imagem);
         }
 
         return null;  // Retorna null se não houver imagem
