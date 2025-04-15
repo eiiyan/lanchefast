@@ -1,7 +1,7 @@
 
         <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
             <div class="card shadow-lg p-4" style="width: 400px">
-                <h2 class="text-center mb-4">Editar Cliente</h2>
+                <h2 class="text-center mb-4">Editar  Cliente</h2>
         
         @if (session()->has('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
