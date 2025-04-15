@@ -4,7 +4,7 @@
             <h2>Produtos</h2>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('produtos.create') }}" class="btn btn-primary">
+            <a href="{{ route('produtos.create') }}" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i> Novo Produto
             </a>
         </div>
@@ -47,7 +47,7 @@
                         @forelse($produtos as $produto)
                             <tr>
                                 <td>{{ $produto->nome }}</td>
-                                <td>{{ $produto->igredientes }}</td>
+                                <td>{{ $produto->ingredientes }}</td>
                                 <td>{{ $produto->valor }}</td>
                                 <td>
                                     <a href="{{ route('produtos.show', $produto->id) }}" 
