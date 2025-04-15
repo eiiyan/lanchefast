@@ -14,21 +14,21 @@ class FuncionarioSeeder extends Seeder
     public function run(): void
     {
         Funcionario::create([
-            'nome' => 'Yan Gabriel',
+            'nome' => 'Funcionário Exemplo',
             'cpf' => '12345678911',
             'email' => 'funcionario1@exemplo.com',
             'senha'=> bcrypt('senha123')
         ]);
 
         Funcionario::create([
-            'nome' => 'Yan Gabriel',
+            'nome' => 'Funcionário Exemplo',
             'cpf' => '12345678912',
             'email' => 'funcionario2@exemplo.com',
             'senha'=> bcrypt('senha123')
         ]);
 
         Funcionario::create([
-            'nome' => 'Yan Gabriel',
+            'nome' => 'Funcionário Exemplo',
             'cpf' => '12345678913',
             'email' => 'funcionario3@exemplo.com',
             'senha'=> bcrypt('senha123')
