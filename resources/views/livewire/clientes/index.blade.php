@@ -4,7 +4,7 @@
             <h2>Clientes</h2>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('clientes.create') }}" class="btn btn-primary">
+            <a href="{{ route('clientes.create') }}" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i>Novo Cliente
             </a>
         </div>
