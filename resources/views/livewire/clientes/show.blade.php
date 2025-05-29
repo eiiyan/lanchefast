@@ -1,6 +1,10 @@
 <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
     <div class="card shadow-lg p-4" style="width: 400px">
+ feature/clientes-create-show-edit
+        <h2 class="text-center mb-4"><i class="bi bi-person-circle me-2" style="font-size: 1.5rem;"></i>Detalhes do Cliente</h2>
+
         <h2 class="text-center mb-4">Detalhes do Cliente</h2>
+main
 
         @if (session()->has('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
