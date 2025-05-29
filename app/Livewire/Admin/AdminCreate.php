@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Livewire\Funcionario;
+namespace App\Livewire\Admin;
 
-use App\Models\Funcionario;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
-class FuncionarioCreate extends Component
+class AdminCreate extends Component
 {
     public $nome;
     public $cpf;
@@ -15,8 +15,8 @@ class FuncionarioCreate extends Component
 
     protected $rules = [
         'nome' => 'required|min:5|max:80',
-        'cpf' => 'required|unique:funcionarios,cpf|max:11',
-        'email' => 'required|unique:funcionarios,email|min:5|max:80',
+        'cpf' => 'required|unique:admins,cpf|max:11',
+        'email' => 'required|unique:admins,email|min:5|max:80',
         'senha' => 'required|min:5|max:255'
     ];
 
@@ -40,7 +40,7 @@ class FuncionarioCreate extends Component
     {
         $this->validate();
 
-        Funcionario::create([
+        Admin::create([
             'nome' => $this->nome,
             'cpf' => $this->cpf,
             'email' => $this->email,
@@ -54,6 +54,6 @@ class FuncionarioCreate extends Component
 
     public function render()
     {
-        return view('livewire.funcionario.funcionario-create');
+        return view('livewire.admin.admin-create');
     }
 }

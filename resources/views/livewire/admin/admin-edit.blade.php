@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
     <div class="card shadow-lg p-4" style="width: 400px">
-        <h3 class="text-center mb-4"><i class="bi bi-person-badge"></i> Editar Funcionário</h3>
+        <h3 class="text-center mb-4"><i class="bi bi-shield-lock"></i> Editar Admin</h3>
 
         @if (session()->has('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
@@ -29,7 +29,7 @@
                 @error('email') <span class="text-danger small">{{ $message }}</span>@enderror
             </div>
             <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
+                <label for="senha" class="form-label">Senha </label>
                 <input type="password" id="senha" wire:model="senha"
                 class="form-control" placeholder="Digite a nova senha">
                 @error('senha') <span class="text-danger small">{{ $message }}</span>@enderror

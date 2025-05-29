@@ -1,21 +1,20 @@
 <div class="container mt-4">
     <div class="row mb-3">
         <div class="col-md-6">
-            <h2><i class="bi bi-box"></i> Produtos</h2> <!-- Ícone adicionado aqui -->
+        <h2><i class="bi bi-shield-lock"></i> Administradores</h2>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('produtos.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Novo Produto
+            <a href="{{ route('admins.create') }}" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> Novo Admin
             </a>
         </div>
     </div>
-
     <div class="card">
         <div class="card-body">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <input type="text" wire:model.debounce.300ms="search" 
-                    class="form-control" placeholder="Buscar produtos...">
+                    <input type="text" wire:model.debounce.300ms="search" class="form-control"
+                        placeholder="Buscar admins...">
                 </div>
                 <div class="col-md-3">
                     <select wire:model="perPage" class="form-select">
@@ -27,7 +26,7 @@
                 </div>
             </div>
 
-            @if(session()->has('message'))
+            @if (session()->has('message'))
                 <div class="alert alert-success">
                     {{ session('message') }}
                 </div>
@@ -38,47 +37,43 @@
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Ingredientes</th>
-                            <th>Valor</th>
+                            <th>CPF</th>
+                            <th>Email</th>
+                            <th>Senha</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($produtos as $produto)
+                        @forelse($admins as $admin)
                             <tr>
-                                <td>{{ $produto->nome }}</td>
-                                <td>{{ $produto->ingredientes }}</td>
-                                <td>{{ $produto->valor }}</td>
+                                <td>{{ $admin->nome }}</td>
+                                <td>{{ $admin->cpf }}</td>
+                                <td>{{ $admin->email }}</td>
+                                <td>********</td>
                                 <td>
-                                    <!-- Visualizar -->
-                                    <a href="{{ route('produtos.show', $produto->id) }}" 
-                                        class="btn btn-sm btn-info" title="Visualizar">
+                                    <a href="{{ route('admins.show', $admin->id) }}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <!-- Editar -->
-                                    <a href="{{ route('produtos.edit', $produto->id) }}" 
-                                        class="btn btn-sm btn-warning" title="Editar">
+                                    <a href="{{ route('admins.edit', $admin->id) }}" class="btn btn-sm btn-warning">
                                         <i class="bi bi-pencil"></i>
                                     </a>
-                                    <!-- Excluir -->
-                                    <button wire:click="delete({{ $produto->id }})" 
-                                        class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza?')" title="Excluir">
+                                    <button wire:click="delete({{ $admin->id }})" class="btn btn-sm btn-danger"
+                                        onclick="return confirm('Tem certeza?')">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">
-                                    Nenhum produto encontrado.</td>
+                                <td colspan="5" class="text-center">Nenhum admin encontrado</td>
                             </tr>
                         @endforelse
                     </tbody>
                 </table>
-            </div>
 
+            </div>
             <div class="mt-3">
-                {{ $produtos->links() }}
+                {{ $admins->links() }}
             </div>
         </div>
     </div>

@@ -1,15 +1,12 @@
 <div class="d-flex align-items-center justify-content-center vh-100 bg-light">
     <div class="card shadow-lg p-4" style="width: 400px">
-        <h3 class="text-center mb-4"><i class="bi bi-person-badge"></i> Editar Funcionário</h3>
+        <h3 class="text-center mb-4"><i class="bi bi-shield-lock"></i> Cadastrar Admin</h3>
 
         @if (session()->has('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-        @if (session()->has('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
 
-        <form wire:submit.prevent="atualizar">
+        <form wire:submit.prevent="salvar">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" id="nome" wire:model="nome"
@@ -31,15 +28,19 @@
             <div class="mb-3">
                 <label for="senha" class="form-label">Senha</label>
                 <input type="password" id="senha" wire:model="senha"
-                class="form-control" placeholder="Digite a nova senha">
+                class="form-control" placeholder="Digite a senha">
                 @error('senha') <span class="text-danger small">{{ $message }}</span>@enderror
-                <p>(deixe em branco para manter a senha atual)</p>
             </div>
 
-            <button type="submit" class="btn btn-warning w-100" wire:loading.attr="disabled">
-                <span wire:loading.remove>Atualizar</span>
-                <span wire:loading>Salvando...</span>
-            </button>
+            @if (session()->has('success'))
+                <div class="alert alert-dismissible fade show" role="alert"
+                    style="background-color: #28a745; color: white; border-color: #28a745">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            <button type="submit" class="btn btn-success w-100">Confirmar</button>
         </form>
     </div>
 </div>

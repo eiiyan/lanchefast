@@ -1,10 +1,10 @@
 <div class="container mt-4">
     <div class="row mb-3">
         <div class="col-md-6">
-            <h2>Funcionários</h2>
+            <h2><i class="bi bi-person-badge"></i> Funcionários</h2>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('funcionarios.create') }}" class="btn btn-primary">
+            <a href="{{ route('funcionarios.create') }}" class="btn btn-success">
                 <i class="bi bi-plus-circle"></i>Novo Funcionário
             </a>
         </div>
@@ -51,7 +51,7 @@
                                 <td>{{ $funcionario->nome }}</td>
                                 <td>{{ $funcionario->cpf}}</td>
                                 <td>{{ $funcionario->email }}</td>
-                                <td>{{ $funcionario->senha }}</td>
+                                <td>********</td>
                                 <td>
                                     <a href="{{ route('funcionarios.show', $funcionario->id) }}" class="btn btn-sm btn-info">
                                         <i class="bi bi-eye"></i>
